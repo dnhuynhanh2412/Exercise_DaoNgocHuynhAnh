@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace Exercise_DaoNgocHuynhAnh
@@ -10,7 +12,8 @@ namespace Exercise_DaoNgocHuynhAnh
     {
         public static void Main()
         {
-            Question_3();
+            //Question_3();
+            Ex_4();
             Console.ReadKey();
         }
         public static void Question_1()
@@ -57,6 +60,142 @@ namespace Exercise_DaoNgocHuynhAnh
             { Console.WriteLine("Toa do diem thuoc phan tu thu ba"); }
             else if (x > 0 && y < 0)
             { Console.WriteLine("Toa do diem thuoc phan tu thu tu"); }
+
+        }
+
+        public static void Ex_1()
+        //Kiem tra Tam giac deu, tam giac can hay tam giac thuong
+        {
+            Console.Write("Nhap do dai canh thu nhat: ");
+            double a = double.Parse(Console.ReadLine());
+            Console.Write("Nhap do dai canh thu hai: ");
+            double b = double.Parse(Console.ReadLine());
+            Console.Write("Nhap do dai canh thu ba: ");
+            double c = double.Parse(Console.ReadLine());
+            if (a <= 0 || b <= 0 || c <= 0 || (a + b <= c) || (a + c <= b) || (b + c <= a))
+            {
+                Console.WriteLine("Day khong phai la mot tam giac");
+            }
+            else if (a == b && b == c)
+            {
+                Console.WriteLine("Day la mot tam giac deu");
+            }
+            else if (a == b || b == c || a == c)
+            {
+                Console.WriteLine("Day la mot tam giac can");
+            }
+            else
+            {
+                Console.WriteLine("Day la mot tam giac thuong");
+            }
+        }
+
+        public static void Ex_2()
+        //Viet chuong trinh Đọc 10 số và tính trung bình và tổng của chúng
+        {
+            int sum = 0;
+            int count = 10;
+            Console.WriteLine("10 so la:");
+
+            for (int i = 1; i < 11; i++)
+            {
+                Console.WriteLine(i);
+                sum += i;
+            }
+            double avg = (double)sum / count;
+            Console.WriteLine($"Tong 10 so la: {sum}");
+            Console.WriteLine($"Trung binh 10 so la: {avg}");
+        }
+
+        public static void Ex_3()
+        //Viết bảng cửu chương của một số cho trước
+        {
+            Console.Write("Nhap 1 so nguyen de thuc hien bang cuu chuong:");
+            int number = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= 10; i++)
+            {
+                /*for (int j = 1; j <= 10; j++)
+                {
+                    Console.WriteLine($"{i} * {j} = {i*j}");
+                }*/
+                Console.WriteLine($"{number} * {i} = {number * i}");
+            }
+        }
+        public static void Ex_4()
+        //Write a program to display a pattern like triangles with a number
+        {
+            Console.Write("Nhap so dong cua tam giac: ");
+            int rows = int.Parse(Console.ReadLine());
+            Console.Write("Nhap con so ban muon: ");
+            int number = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= rows; i++)                     ///Điều khiển số dòng của tam giác
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write($"{number} ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void Ex_5()
+        //Pattern 01: Số 1 sẽ được nhắc lại ở mỗi dòng
+        {
+            Console.Write("Nhap so hang cua tam giac ma ban muon tao: ");
+            int rows = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= rows; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(j + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void Ex_5_1()
+        //Pattern 02: Ko có số bị lặp lại ( 1 > 1 2 > 1 2 3 ... )
+        {
+            int count = 1; 
+            Console.Write("Nhap so hang cua tam giac ma ban muon tao: ");
+            int rows = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= rows; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(count + " ");
+                    count++;
+                }
+                Console.WriteLine();
+            }
+        }
+        
+        public static void Ex_5_2()
+        //Pattern 03: tựa pattern 2 nhưng including space 
+        {
+            int count = 1;
+            Console.Write("Nhap so hang cua tam giac ma ban muon tao: ");
+            int rows = int.Parse(Console.ReadLine());
+            ///Điều khiển số dòng của tam giác
+            for(int i = 1; i <= rows; i++)
+            {
+                ///In khoảng trắng để canh giữa tam giác
+                for(int space = rows; space > i; space--)
+                {
+                    Console.Write(" ");
+                }
+                ///In các số trong dòng hiện tại
+                for (int j = 1; j <= i; j++) 
+                {
+                    Console.Write(count + " ");
+                    count++;
+                }
+                Console.WriteLine();                
+            }
+        }
+        
+        public static void Ex_6()
+        {
 
         }
     }
