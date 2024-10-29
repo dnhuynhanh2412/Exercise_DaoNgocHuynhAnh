@@ -13,7 +13,7 @@ namespace Exercise_DaoNgocHuynhAnh
         public static void Main()
         {
             //Question_3();
-            Ex_4();
+            Ex_6();
             Console.ReadKey();
         }
         public static void Question_1()
@@ -195,8 +195,21 @@ namespace Exercise_DaoNgocHuynhAnh
         }
         
         public static void Ex_6()
+        //Write a program to display the n terms of harmonic series and their sum.
+        //(1 + 1/2 + 1/3 + 1/4 + 1/5 ... 1/n term)
         {
-
+            Console.Write("Nhap so hang n: ");
+            int n = int.Parse(Console.ReadLine());
+            double sum = 0.0;
+            Console.WriteLine("Chuoi day so la: ");
+            for(int i = 1; i <= n; i++)
+            {
+                double term = 1.0 / i;
+                Console.Write($"{term} ");
+                sum += term;
+            }
+            
+            Console.WriteLine($"\nTong cua chuoi ham so n so hang la: {sum}");
         }
     }
 }
