@@ -13,7 +13,7 @@ namespace Exercise_DaoNgocHuynhAnh
         public static void Main()
         {
             //Question_3();
-            Ex_6();
+            Ex_5_2();
             Console.ReadKey();
         }
         public static void Question_1()
