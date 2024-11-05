@@ -211,5 +211,24 @@ namespace Exercise_DaoNgocHuynhAnh
             
             Console.WriteLine($"\nTong cua chuoi ham so n so hang la: {sum}");
         }
+
+        public static void Ex_7()
+        // Write a program to find the ‘perfect’ numbers within a given number range.
+        {
+            Console.Write("Nhap gia tri gioi han duoi: ");
+            int start = int.Parse(Console.ReadLine());
+            Console.WriteLine("Nhap gia tri gioi han tren");
+            int end = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Gia tri cua so hoan hao nam giua {start} va {end}");
+
+        static bool IsPerfectNumber(int number)
+            {
+                if (number < 2) return false;
+                for (int i = 2; i <= number / 2; i++)
+                    if (number % i == 0)
+                        return false;
+                return true;
+            }
+        }
     }
 }

@@ -44,9 +44,9 @@ namespace Exercise_DaoNgocHuynhAnh
         }
 
         //Câu 4
+        //Kiểm tra xem có phải là số nguyên tố hay không
         static bool isPrime(int number)
         {
-            //Kiểm tra xem có phải là số nguyên tố hay không
             if(number < 2) return false;
             for (int i = 2; i <= number / 2; i++)
                 if (number % i == 0)
