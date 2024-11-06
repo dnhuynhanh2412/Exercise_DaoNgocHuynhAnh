@@ -8,6 +8,7 @@ namespace Exercise_DaoNgocHuynhAnh
 {
     internal class Session_05_1
     {
+        //30-10-2024
         static int Question_01(int a, int b, int c)
         //Tìm số lớn nhất trong 3 số
         //Improve the next version that accept at least 1 parameter
@@ -80,8 +81,8 @@ namespace Exercise_DaoNgocHuynhAnh
 
         static void Main(string[] args)
         {
-            //printPrimeNumberUnderN(100);              //In số nguyên tố nhỏ hơn 100
-            printFirstNprime(100);                      //In 100 số nguyên tố đầu tiên
+            printPrimeNumberUnderN(10);              //In số nguyên tố nhỏ hơn 100
+            //printFirstNprime(10);                      //In 100 số nguyên tố đầu tiên
             Console.ReadKey();
         }
     }

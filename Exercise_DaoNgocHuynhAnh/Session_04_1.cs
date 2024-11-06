@@ -11,7 +11,12 @@ namespace Exercise_DaoNgocHuynhAnh
     //Máy tính sẽ nghĩ ngẫu nhiên 1 số từ 1 đến 10
     //Người dùng sẽ đoán xem số đó là số nào
     //Nếu đoán sai sẽ thông báo...
+    { 
+     public static void Main()
     {
+        ex01();
+        Console.ReadKey();
+    }
     static void ex01()
     {
             do
@@ -51,7 +56,7 @@ namespace Exercise_DaoNgocHuynhAnh
                 } while (isContinue);
 
                 Console.WriteLine("==============================");
-                Console.Write("Choi nua khong? <C/K: >");
+                Console.Write("Choi nua khong? <C/K>");
                 string tl = Console.ReadLine();
                 if (tl.ToUpper().Equals("K"))
                 {
