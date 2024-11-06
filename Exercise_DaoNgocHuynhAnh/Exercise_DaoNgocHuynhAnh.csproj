@@ -5,7 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>Exercise_DaoNgocHuynhAnh.Session_05_1</StartupObject>
+    <StartupObject>Exercise_DaoNgocHuynhAnh.Session_06</StartupObject>
   </PropertyGroup>
 
 </Project>
