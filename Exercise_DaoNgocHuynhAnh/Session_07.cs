@@ -158,14 +158,14 @@ namespace Exercise_DaoNgocHuynhAnh
             }
 
             Console.WriteLine("Duong cheo chinh cua ma tran vuong la: ");
-            for(int i = 0; i < matrixsquare.GetLength(0); i++)
+            for (int i = 0; i < matrixsquare.GetLength(0); i++)
             {
-                Console.Write(matrixsquare[i,i] + "\t");
+                Console.Write(matrixsquare[i, i] + "\t");
             }
             Console.WriteLine();
 
             Console.WriteLine("Duong cheo phu cua ma tran vuong la: ");
-            for(int i = 0; i < matrixsquare.GetLength(0); i++)
+            for (int i = 0; i < matrixsquare.GetLength(0); i++)
             {
                 Console.Write(matrixsquare[matrixsquare.GetLength(0) - i - 1, i] + "\t");
             }

@@ -37,24 +37,40 @@ namespace Exercise_DaoNgocHuynhAnh
             int sum_of_dice = die_1 + die_2 + die_3;
             return sum_of_dice;
         }
-        static void play1Round()
+        static void play1Round(ref int user_money, ref int tiencuoc)
         {
             int com_dice = rollDice();
             Console.Write("Ban doan Tai hay Xiu <T/X>");
             string user_guessing = Console.ReadLine();
             if (user_guessing.ToUpper().Equals("T"))
             {
-                if(com_dice>=10) //Tài
+                if (com_dice >= 10) //Tài
+                {
                     Console.WriteLine("Ban thang");
+                    user_money += tiencuoc;
+                    Console.WriteLine($"Ban vua nhan duoc {tiencuoc}");
+                }
                 else
+                {
                     Console.WriteLine("Ban thua");
+                    user_money -= tiencuoc;
+                    Console.WriteLine($"Ban vua mat {tiencuoc}");
+                }
             }
             else if (user_guessing.ToUpper().Equals("X"))
             {
                 if (com_dice < 10) //Xỉu
+                {
                     Console.WriteLine("Ban thang");
+                    user_money += tiencuoc;
+                    Console.WriteLine($"Ban vua nhan duoc {tiencuoc}");
+                }
                 else
+                { 
                     Console.WriteLine("Ban thua");
+                    user_money -= tiencuoc;
+                    Console.WriteLine($"Ban vua mat {tiencuoc}");
+                }
             }
             else
             {
@@ -63,15 +79,23 @@ namespace Exercise_DaoNgocHuynhAnh
         }
         static void game_engine()
         {
-            do 
+            Console.WriteLine("So tien hien co cua ban trong game la: 2000$");
+            Console.WriteLine("Ban muon cuoc bao nhieu?");
+            int tiencuoc = int.Parse(Console.ReadLine());
+            int count = 0;
+            int user_money = 2000;
+            do
             {
-                play1Round();
-
+                play1Round(ref user_money, ref tiencuoc);
+                count++;
                 Console.WriteLine("Ban choi nua khong? <C/K>");
                 string choice = Console.ReadLine();
                 if (choice.ToUpper().Equals("K"))
+                {
+                    Console.WriteLine($"Ban da choi {count} lan");
+                    Console.WriteLine($"So tien cua ban: {user_money}");
                     break;
-
+                }
             } while (true);
             Console.WriteLine("Mai choi nua nhe");
         }
