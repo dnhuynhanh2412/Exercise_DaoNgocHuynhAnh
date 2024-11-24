@@ -53,11 +53,17 @@ namespace Exercise_DaoNgocHuynhAnh
             Console.WriteLine("Mang da tao la: ");
             InMang(a);
             InGTLNmoiDong(a);
+            Console.WriteLine();
             InGTLNcuaMang(a);
         //Sap xep dong cua mang theo thu tu nho den lon
             Console.WriteLine("Mang da sap xep tang dan: ");
             SortRowAtoZ(a);
             InMang(a);
+            InSoNguyenTo(a);
+        // Search and print all positions of a number (enter from the user).
+            Console.WriteLine("Nhap so ban can tim: ");
+            int value = int.Parse(Console.ReadLine());
+            TimGiaTri(a,value);
         }
 
         // Print the biggest number of each row and the largest number of the whole array.
@@ -138,17 +144,43 @@ namespace Exercise_DaoNgocHuynhAnh
             }
         }
 
-        private static void IsPrime(int[][] a)
+        private static bool IsPrime(int n)
         {
-            bool IsPrime = false;
-            Console.WriteLine("Mang co cac so nguyen to: ");
-            for (int i = 0;i < a.Length; i++)
+            if (n <= 1) return false; // 0 và 1 không phải số nguyên tố
+            for (int i = 2; i <= Math.Sqrt(n); i++)
+            {
+                    if (n % i == 0) 
+                    return false;
+            }
+            return true;
+        }
+        static void InSoNguyenTo(int[][] a)
+        {
+            Console.WriteLine("Mang co cac so nguyen to la:");
+            for (int i = 0; i < a.Length; i++)
             {
                 for (int j = 0; j < a[i].Length; j++)
                 {
+                    if (IsPrime(a[i][j]))
+                    {
+                        Console.Write(a[i][j] + "\t");
+                    }
+                }
+            }
+            Console.WriteLine();
+        }
 
+        static void TimGiaTri(int[][] a, int value)
+        {
+            for(int i =0; i < a.Length;i++)
+            {
+                for(int j =0; j< a[i].Length; j++)
+                {
+                    if (a[i][j] == value)
+                        Console.WriteLine($"{value} nam o dong {i} cot {j}");
                 }
             }
         }
+
     }
 }
