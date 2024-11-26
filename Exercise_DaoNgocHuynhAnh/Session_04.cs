@@ -78,15 +78,15 @@ namespace Exercise_DaoNgocHuynhAnh
             }
             else if (a == b && b == c)
             {
-                Console.WriteLine("Day la mot tam giac deu");
+                Console.WriteLine("Day la mot tam giac deu"); //Equilateral
             }
             else if (a == b || b == c || a == c)
             {
-                Console.WriteLine("Day la mot tam giac can");
+                Console.WriteLine("Day la mot tam giac can"); //Isosceles
             }
             else
             {
-                Console.WriteLine("Day la mot tam giac thuong");
+                Console.WriteLine("Day la mot tam giac thuong"); //Scalene
             }
         }
 
@@ -205,7 +205,7 @@ namespace Exercise_DaoNgocHuynhAnh
             for(int i = 1; i <= n; i++)
             {
                 double term = 1.0 / i;
-                Console.Write($"{term} ");
+                Console.Write($"{term}");
                 sum += term;
             }
             

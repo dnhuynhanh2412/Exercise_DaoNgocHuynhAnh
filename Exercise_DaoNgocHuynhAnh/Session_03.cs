@@ -52,15 +52,15 @@ namespace Exercise_DaoNgocHuynhAnh
             char x = char.Parse(Console.ReadLine());
             if (x == 'a' || x == 'o' || x == 'e' || x == 'u' || x == 'i' || x == 'A' || x == 'O' || x == 'E' || x == 'U' || x == 'I')
             {
-                Console.WriteLine($"Ky tu ban vua nhap vao la chu cai nguyen am");
+                Console.WriteLine($"Ky tu ban vua nhap vao la chu cai nguyen am"); //vowel
             }
             else if ((x >= '0') && (x <= '9'))
             {
-                Console.WriteLine($"Ky tu ban vua nhap vao la chu so");
+                Console.WriteLine($"Ky tu ban vua nhap vao la chu so"); //digit
             }
             else
             {
-                Console.WriteLine($"Ky tu ban vua nhap vao la ky tu khac");
+                Console.WriteLine($"Ky tu ban vua nhap vao la ky tu khac"); //any other symbol
             }
         }
     }
